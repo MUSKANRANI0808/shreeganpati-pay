@@ -13,15 +13,16 @@
     .btn { width: 100%; border: none; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 10px; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff; font-size: 17px; font-weight: bold; padding: 14px 10px; border-radius: 12px; margin-bottom: 14px; box-shadow: 0 4px 14px rgba(37,99,235,0.35); box-sizing: border-box; }
     .logos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 100%; }
     .pill { display: inline-flex; align-items: center; justify-content: center; gap: 4px; background: #fff; color: #111827; padding: 5px 4px; border-radius: 20px; font-size: 11px; font-weight: 700; white-space: nowrap; }
-    .icon { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border-radius: 50%; font-size: 9px; font-weight: bold; color: #fff; flex-shrink: 0; }
+    .pill svg { width: 15px; height: 15px; flex-shrink: 0; }
     .qr { width: 185px; height: 185px; border: 1px solid #e2e8f0; border-radius: 12px; padding: 8px; margin-top: 4px; }
     .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.45); display: none; align-items: flex-end; justify-content: center; z-index: 99; }
-    .sheet { background: #fff; width: 100%; max-width: 420px; border-radius: 22px 22px 0 0; padding: 20px 16px 24px; text-align: center; box-sizing: border-box; }
-    .sheet h3 { margin: 0 0 18px; font-size: 17px; color: #111827; }
-    .app-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 18px; }
-    .app-item { text-decoration: none; color: #1f2937; font-size: 12px; font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 6px; }
-    .app-box { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 15px; color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
-    .cancel { background: none; border: none; color: #2563eb; font-size: 15px; font-weight: bold; cursor: pointer; padding: 8px 20px; }
+    .sheet { background: #fff; width: 100%; max-width: 420px; border-radius: 24px 24px 0 0; padding: 20px 16px 24px; text-align: center; box-sizing: border-box; }
+    .sheet h3 { margin: 0 0 20px; font-size: 17px; color: #111827; }
+    .app-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+    .app-item { text-decoration: none; color: #374151; font-size: 12px; font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .app-box { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border: 1px solid #f1f5f9; overflow: hidden; }
+    .app-box svg { width: 38px; height: 38px; }
+    .cancel { background: none; border: none; color: #2563eb; font-size: 16px; font-weight: bold; cursor: pointer; padding: 8px 20px; }
   </style>
 </head>
 <body>
@@ -33,10 +34,10 @@
     <button class="btn" onclick="document.getElementById('upiSheet').style.display='flex'">
       <span>Pay Now via UPI</span>
       <div class="logos">
-        <span class="pill"><span class="icon" style="background:#4285F4;">G</span>GPay</span>
-        <span class="pill"><span class="icon" style="background:#002e6e;color:#00baf2;font-size:7px;">Pay</span>Paytm</span>
-        <span class="pill"><span class="icon" style="background:#1c1132;color:#22c55e;">N</span>Navi</span>
-        <span class="pill"><span class="icon" style="background:#ff6600;">B</span>BHIM</span>
+        <span class="pill"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M21.35 11.1h-9.17v2.73h6.51c-.33 1.81-1.5 3.34-3.2 4.37v3.62h5.18c3.03-2.79 4.78-6.9 4.78-11.77 0-.8-.08-1.57-.22-2.32z"/><path fill="#34A853" d="M12.18 22c4.32 0 7.95-1.43 10.6-3.88l-5.18-3.62c-1.43.96-3.26 1.53-5.42 1.53-4.17 0-7.7-2.81-8.96-6.59H-.12v3.73C2.52 18.41 7 22 12.18 22z"/><path fill="#FBBC05" d="M3.22 9.44C2.9 8.48 2.72 7.45 2.72 6.38s.18-2.1.5-3.06V-.41H-.12C-1.19 1.72-1.8 4.12-1.8 6.38s.61 4.66 1.68 6.79l3.34-3.73z"/><path fill="#EA4335" d="M12.18 2.75c2.35 0 4.46.81 6.12 2.4l4.59-4.59C20.12-1.99 16.5-3.5 12.18-3.5 7-3.5 2.52.09-.12 5.33l3.34 3.73c1.26-3.78 4.79-6.31 8.96-6.31z"/></svg>GPay</span>
+        <span class="pill"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="12" fill="#002e6e"/><text x="12" y="15.5" text-anchor="middle" fill="#00baf2" font-size="8" font-weight="bold">Pay</text></svg>Paytm</span>
+        <span class="pill"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="12" fill="#190928"/><path d="M6 17V9h4l4 5V9h4v8h-4l-4-5v5H6z" fill="#1de9b6"/></svg>Navi</span>
+        <span class="pill"><svg viewBox="0 0 24 24"><polygon points="7,4 16,12 7,20" fill="#ff6f00"/><polygon points="11,4 20,12 11,20" fill="#00897b"/></svg>BHIM</span>
       </div>
     </button>
 
@@ -47,20 +48,51 @@
     <div class="sheet" onclick="event.stopPropagation()">
       <h3>Open with</h3>
       <div class="app-grid">
+        <!-- GPay Official Style Icon -->
         <a class="app-item" href="intent://pay?pa=Q912632707@ybl&pn=PhonePeMerchant&mc=0000&mode=02&purpose=00#Intent;scheme=upi;package=com.google.android.apps.nbu.paisa.user;end">
-          <div class="app-box" style="background:#4285F4;">GPay</div>
+          <div class="app-box">
+            <svg viewBox="0 0 48 48">
+              <path fill="#4285F4" d="M43.6 20.1H24v7.9h11.3c-1.1 5.2-5.7 8.9-11.3 8.9-6.9 0-12.5-5.6-12.5-12.5S17.1 11.9 24 11.9c3.1 0 5.9 1.1 8.1 3l5.8-5.8C34.3 5.7 29.4 3.6 24 3.6 12.7 3.6 3.6 12.7 3.6 24S12.7 44.4 24 44.4c10.2 0 19.5-7.4 19.5-20.4 0-1.4-.1-2.7-.4-3.9z"/>
+              <path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 11.9 24 11.9c3.1 0 5.9 1.1 8.1 3l5.8-5.8C34.3 5.7 29.4 3.6 24 3.6c-7.7 0-14.4 4.4-17.7 11.1z"/>
+              <path fill="#FBBC05" d="M24 44.4c5.3 0 10.1-1.9 13.7-5.1l-6.3-5.2c-2 1.4-4.6 2.3-7.4 2.3-5.5 0-10.2-3.7-11.8-8.7l-6.5 5C9.1 39.6 16 44.4 24 44.4z"/>
+              <path fill="#EA4335" d="M43.6 20.1H24v7.9h11.3c-.8 2.6-2.4 4.8-4.6 6.2l6.3 5.2c3.7-3.4 6.5-8.6 6.5-15.4 0-1.4-.1-2.7-.4-3.9z"/>
+            </svg>
+          </div>
           <span>GPay</span>
         </a>
+
+        <!-- Paytm Official Style Icon -->
         <a class="app-item" href="intent://pay?pa=Q912632707@ybl&pn=PhonePeMerchant&mc=0000&mode=02&purpose=00#Intent;scheme=upi;package=net.one97.paytm;end">
-          <div class="app-box" style="background:#002e6e;color:#00baf2;font-size:13px;">Paytm</div>
+          <div class="app-box">
+            <svg viewBox="0 0 48 48">
+              <text x="4" y="30" fill="#002e6e" font-size="16" font-weight="900" font-family="Arial">Pay</text>
+              <text x="31" y="30" fill="#00baf2" font-size="15" font-weight="900" font-family="Arial">tm</text>
+              <rect x="6" y="35" width="22" height="3" rx="1.5" fill="#002e6e"/>
+              <rect x="30" y="35" width="12" height="3" rx="1.5" fill="#00baf2"/>
+            </svg>
+          </div>
           <span>Paytm</span>
         </a>
+
+        <!-- Navi Official Style Icon -->
         <a class="app-item" href="intent://pay?pa=Q912632707@ybl&pn=PhonePeMerchant&mc=0000&mode=02&purpose=00#Intent;scheme=upi;package=com.naviapp;end">
-          <div class="app-box" style="background:#1c1132;color:#22c55e;">Navi</div>
+          <div class="app-box" style="background:#190928;border-color:#190928;">
+            <svg viewBox="0 0 48 48">
+              <path d="M11 35V18h7v17h-7zm7-11h9v11h7V18c0-3.3-2.7-6-6-6H18v12z" fill="#1de9b6"/>
+              <path d="M29 12h8v8l-8-8z" fill="#7c4dff"/>
+            </svg>
+          </div>
           <span>Navi</span>
         </a>
+
+        <!-- BHIM Official Style Icon -->
         <a class="app-item" href="intent://pay?pa=Q912632707@ybl&pn=PhonePeMerchant&mc=0000&mode=02&purpose=00#Intent;scheme=upi;package=in.org.npci.upiapp;end">
-          <div class="app-box" style="background:#ff6600;">BHIM</div>
+          <div class="app-box">
+            <svg viewBox="0 0 48 48">
+              <polygon points="13,6 31,24 13,42" fill="#ff6f00"/>
+              <polygon points="21,6 39,24 21,42" fill="#00897b" opacity="0.9"/>
+            </svg>
+          </div>
           <span>BHIM</span>
         </a>
       </div>
