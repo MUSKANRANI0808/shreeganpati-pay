@@ -4,16 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pay Shree Ganpati Textile</title>
-  <script>
-    
-    var upiUrl = "upi://pay?pa=ujaval.kumar@ybl&pn=Shree%20Ganpati%20Textile&cu=INR";
-    window.location.href = upiUrl;
-    document.addEventListener("DOMContentLoaded", function() {
-      setTimeout(function() {
-        window.location.href = upiUrl;
-      }, 50);
-    });
-  </script>
   <style>
     body { font-family: Arial, sans-serif; background: #f3f5f7; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 16px; box-sizing: border-box; }
     .card { background: #fff; max-width: 380px; width: 100%; border-radius: 16px; padding: 24px 20px; text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
@@ -60,7 +50,6 @@
       flex-shrink: 0;
     }
     .qr { width: 175px; height: 175px; border: 1px solid #e2e8f0; border-radius: 12px; padding: 8px; margin-top: 8px; }
-    p { font-size: 13px; color: #4b5563; }
   </style>
 </head>
 <body>
@@ -102,9 +91,17 @@
       </div>
     </a>
 
-  
     <!-- PhonePe Business QR (Q912632707@ybl) -->
-    <img class="qr" loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=upi%3A%2F%2Fpay%3Fpa%3DQ912632707%40ybl%26pn%3DPhonePeMerchant%26mc%3D0000%26mode%3D02%26purpose%3D00" alt="PhonePe Business QR" />
+    <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=upi%3A%2F%2Fpay%3Fpa%3DQ912632707%40ybl%26pn%3DPhonePeMerchant%26mc%3D0000%26mode%3D02%26purpose%3D00" alt="PhonePe Business QR" />
   </div>
+
+  <script>
+    // पहले पेज और QR दिखने दें, फिर तुरंत Open with खोलें
+    window.addEventListener("load", function() {
+      setTimeout(function() {
+        window.location.href = "upi://pay?pa=ujaval.kumar@ybl&pn=Shree%20Ganpati%20Textile&cu=INR";
+      }, 200);
+    });
+  </script>
 </body>
 </html>
