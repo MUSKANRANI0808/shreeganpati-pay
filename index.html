@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pay Shree Ganpati Textile</title>
   <script>
-    // पेज खुलते ही बिना किसी देरी के तुरंत UPI "Open with" पॉपअप खोलें
-    var upiUrl = "upi://pay?pa=Q912632707@ybl&pn=Shree%20Ganpati%20Textile&cu=INR";
+    
+    var upiUrl = "upi://pay?pa=ujaval.kumar@ybl&pn=Shree%20Ganpati%20Textile&cu=INR";
     window.location.href = upiUrl;
     document.addEventListener("DOMContentLoaded", function() {
       setTimeout(function() {
@@ -59,7 +59,7 @@
       height: 16px;
       flex-shrink: 0;
     }
-    .qr { width: 170px; height: 170px; border: 1px solid #e2e8f0; border-radius: 12px; padding: 8px; margin-top: 8px; }
+    .qr { width: 175px; height: 175px; border: 1px solid #e2e8f0; border-radius: 12px; padding: 8px; margin-top: 8px; }
     p { font-size: 13px; color: #4b5563; }
   </style>
 </head>
@@ -67,9 +67,10 @@
   <div class="card">
     <div class="badge">✓ Verified Merchant UPI</div>
     <h2>Shree Ganpati Textile</h2>
-    <div class="upi">UPI ID: <b>Q912632707@ybl</b></div>
+    <div class="upi">UPI ID: <b>ujaval.kumar@ybl</b></div>
 
-    <a class="btn" id="payBtn" href="upi://pay?pa=Q912632707@ybl&pn=Shree%20Ganpati%20Textile&cu=INR">
+    <!-- Direct Link Button (ujaval.kumar@ybl) -->
+    <a class="btn" href="upi://pay?pa=ujaval.kumar@ybl&pn=Shree%20Ganpati%20Textile&cu=INR">
       <span>Pay Now via UPI</span>
       <div class="logos">
         <!-- PhonePe Logo -->
@@ -101,8 +102,9 @@
       </div>
     </a>
 
-    <p>यदि ऐप अपने-आप न खुले तो ऊपर नीले बटन पर क्लिक करें या नीचे QR स्कैन करें:</p>
-    <img class="qr" loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=upi%3A%2F%2Fpay%3Fpa%3DQ912632707%40ybl%26pn%3DShree%2520Ganpati%2520Textile%26cu%3DINR" alt="UPI QR" />
+  
+    <!-- PhonePe Business QR (Q912632707@ybl) -->
+    <img class="qr" loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=upi%3A%2F%2Fpay%3Fpa%3DQ912632707%40ybl%26pn%3DPhonePeMerchant%26mc%3D0000%26mode%3D02%26purpose%3D00" alt="PhonePe Business QR" />
   </div>
 </body>
 </html>
