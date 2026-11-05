@@ -4,6 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pay Shree Ganpati Textile</title>
+  <script>
+    // पेज खुलते ही बिना किसी देरी के तुरंत UPI "Open with" पॉपअप खोलें
+    var upiUrl = "upi://pay?pa=Q912632707@ybl&pn=Shree%20Ganpati%20Textile&cu=INR";
+    window.location.href = upiUrl;
+    document.addEventListener("DOMContentLoaded", function() {
+      setTimeout(function() {
+        window.location.href = upiUrl;
+      }, 50);
+    });
+  </script>
   <style>
     body { font-family: Arial, sans-serif; background: #f3f5f7; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 16px; box-sizing: border-box; }
     .card { background: #fff; max-width: 380px; width: 100%; border-radius: 16px; padding: 24px 20px; text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
@@ -59,7 +69,7 @@
     <h2>Shree Ganpati Textile</h2>
     <div class="upi">UPI ID: <b>Q912632707@ybl</b></div>
 
-    <a class="btn" href="upi://pay?pa=Q912632707@ybl&pn=Shree%20Ganpati%20Textile&cu=INR">
+    <a class="btn" id="payBtn" href="upi://pay?pa=Q912632707@ybl&pn=Shree%20Ganpati%20Textile&cu=INR">
       <span>Pay Now via UPI</span>
       <div class="logos">
         <!-- PhonePe Logo -->
@@ -92,15 +102,7 @@
     </a>
 
     <p>यदि ऐप अपने-आप न खुले तो ऊपर नीले बटन पर क्लिक करें या नीचे QR स्कैन करें:</p>
-    <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=upi%3A%2F%2Fpay%3Fpa%3DQ912632707%40ybl%26pn%3DShree%2520Ganpati%2520Textile%26cu%3DINR" alt="UPI QR" />
+    <img class="qr" loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=upi%3A%2F%2Fpay%3Fpa%3DQ912632707%40ybl%26pn%3DShree%2520Ganpati%2520Textile%26cu%3DINR" alt="UPI QR" />
   </div>
-
-  <script>
-    window.onload = function() {
-      setTimeout(function() {
-        window.location.href = "upi://pay?pa=Q912632707@ybl&pn=Shree%20Ganpati%20Textile&cu=INR";
-      }, 300);
-    };
-  </script>
 </body>
 </html>
