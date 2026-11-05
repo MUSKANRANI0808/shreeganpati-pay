@@ -10,29 +10,63 @@
     .badge { background: #dbeafe; color: #1d4ed8; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 10px; }
     h2 { margin: 4px 0 8px; color: #111827; }
     .upi { background: #f8fafc; border: 1px dashed #cbd5e1; padding: 8px 12px; border-radius: 8px; font-size: 14px; margin-bottom: 16px; display: inline-block; }
-    .btn { display: flex; flex-direction: column; align-items: center; gap: 8px; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff; text-decoration: none; font-size: 17px; font-weight: bold; padding: 14px 12px; border-radius: 12px; margin-bottom: 14px; box-shadow: 0 4px 14px rgba(37,99,235,0.35); }
-    .logos { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
-    .pill { display: inline-flex; align-items: center; gap: 5px; background: #fff; color: #111827; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 700; }
-    .icon { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 50%; font-size: 11px; font-weight: bold; }
+    .btn { width: 100%; border: none; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 8px; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff; font-size: 17px; font-weight: bold; padding: 14px 12px; border-radius: 12px; margin-bottom: 14px; box-shadow: 0 4px 14px rgba(37,99,235,0.35); }
+    .logos { display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; }
+    .pill { display: inline-flex; align-items: center; gap: 4px; background: #fff; color: #111827; padding: 4px 8px; border-radius: 20px; font-size: 11.5px; font-weight: 700; }
+    .icon { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 50%; font-size: 10px; font-weight: bold; color: #fff; }
     .qr { width: 185px; height: 185px; border: 1px solid #e2e8f0; border-radius: 12px; padding: 8px; margin-top: 4px; }
+    .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.45); display: none; align-items: flex-end; justify-content: center; z-index: 99; }
+    .sheet { background: #fff; width: 100%; max-width: 420px; border-radius: 22px 22px 0 0; padding: 20px 16px 24px; text-align: center; }
+    .sheet h3 { margin: 0 0 18px; font-size: 17px; color: #111827; }
+    .app-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 18px; }
+    .app-item { text-decoration: none; color: #1f2937; font-size: 12px; font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .app-box { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 16px; color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+    .cancel { background: none; border: none; color: #2563eb; font-size: 15px; font-weight: bold; cursor: pointer; padding: 8px 20px; }
   </style>
 </head>
 <body>
   <div class="card">
     <div class="badge">✓ Verified Merchant UPI</div>
     <h2>Shree Ganpati Textile</h2>
-    <div class="upi">UPI ID: <b>ujaval.kumar@ybl</b></div>
+    <div class="upi">UPI ID: <b>Q912632707@ybl</b></div>
 
-    <a class="btn" href="upi://pay?pa=ujaval.kumar@ybl&pn=Shree%20Ganpati%20Textile&cu=INR">
+    <button class="btn" onclick="document.getElementById('upiSheet').style.display='flex'">
       <span>Pay Now via UPI</span>
       <div class="logos">
-        <span class="pill"><span class="icon" style="background:#5f259f;color:#fff;">पे</span>PhonePe</span>
-        <span class="pill"><span class="icon" style="background:#4285F4;color:#fff;">G</span>GPay</span>
+        <span class="pill"><span class="icon" style="background:#4285F4;">G</span>GPay</span>
         <span class="pill"><span class="icon" style="background:#002e6e;color:#00baf2;font-size:8px;">Pay</span>Paytm</span>
+        <span class="pill"><span class="icon" style="background:#1c1132;color:#22c55e;">N</span>Navi</span>
+        <span class="pill"><span class="icon" style="background:#ff6600;">B</span>BHIM</span>
       </div>
-    </a>
+    </button>
 
     <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=upi%3A%2F%2Fpay%3Fpa%3DQ912632707%40ybl%26pn%3DPhonePeMerchant%26mc%3D0000%26mode%3D02%26purpose%3D00" alt="PhonePe Business QR" />
+  </div>
+
+  <!-- Custom Open With Sheet (Without PhonePe) -->
+  <div class="overlay" id="upiSheet" onclick="this.style.display='none'">
+    <div class="sheet" onclick="event.stopPropagation()">
+      <h3>Open with</h3>
+      <div class="app-grid">
+        <a class="app-item" href="intent://pay?pa=Q912632707@ybl&pn=PhonePeMerchant&mc=0000&mode=02&purpose=00#Intent;scheme=upi;package=com.google.android.apps.nbu.paisa.user;end">
+          <div class="app-box" style="background:#4285F4;">GPay</div>
+          <span>GPay</span>
+        </a>
+        <a class="app-item" href="intent://pay?pa=Q912632707@ybl&pn=PhonePeMerchant&mc=0000&mode=02&purpose=00#Intent;scheme=upi;package=net.one97.paytm;end">
+          <div class="app-box" style="background:#002e6e;color:#00baf2;font-size:13px;">Paytm</div>
+          <span>Paytm</span>
+        </a>
+        <a class="app-item" href="intent://pay?pa=Q912632707@ybl&pn=PhonePeMerchant&mc=0000&mode=02&purpose=00#Intent;scheme=upi;package=com.naviapp;end">
+          <div class="app-box" style="background:#1c1132;color:#22c55e;">Navi</div>
+          <span>Navi</span>
+        </a>
+        <a class="app-item" href="intent://pay?pa=Q912632707@ybl&pn=PhonePeMerchant&mc=0000&mode=02&purpose=00#Intent;scheme=upi;package=in.org.npci.upiapp;end">
+          <div class="app-box" style="background:#ff6600;">BHIM</div>
+          <span>BHIM</span>
+        </a>
+      </div>
+      <button class="cancel" onclick="document.getElementById('upiSheet').style.display='none'">Cancel</button>
+    </div>
   </div>
 </body>
 </html>
